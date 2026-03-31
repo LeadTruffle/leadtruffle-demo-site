@@ -1,0 +1,39 @@
+src/consts.ts
+  bda2dcbb16eee710 4-16,20-21,24-27,32,37,43
+.nvmrc
+  bda2dcbb16eee710 1
+README.md
+  bda2dcbb16eee710 5-8,27-30,32
+src/components/BaseHead.astro
+  bda2dcbb16eee710 2,14,23-24
+src/pages/rss.xml.ts
+  bda2dcbb16eee710 2,50
+src/pages/404.astro
+  bda2dcbb16eee710 3,14
+src/components/Footer.astro
+  bda2dcbb16eee710 8,26-28,35-37
+src/pages/index.astro
+  bda2dcbb16eee710 6,31-32,54,65,74,83,132,138,144
+src/components/Header.astro
+  bda2dcbb16eee710 3,6,11-12,23,25,42-43,65,67,84-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23",
+  "base_commit_sha": "7a5c83107191e44326f501480f2258f6aa3852b1",
+  "prompts": {
+    "bda2dcbb16eee710": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019d4434-b580-7340-a8b8-936bc405f5d8",
+        "model": "gpt-5.4"
+      },
+      "human_author": "aaron decker <aaron@ard.ninja>",
+      "messages": [],
+      "total_additions": 70,
+      "total_deletions": 41,
+      "accepted_lines": 70,
+      "overriden_lines": 0
+    }
+  }
+}
