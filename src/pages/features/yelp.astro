@@ -1,0 +1,39 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro'
+
+const pageTitle = 'Yelp Autoresponder Demo | LeadTruffle Demo Lab'
+const pageDescription =
+  'A focused demo page for how LeadTruffle can help teams respond to Yelp leads faster and more consistently.'
+---
+
+<SiteLayout title={pageTitle} description={pageDescription}>
+  <section class="page-hero">
+    <div class="shell">
+      <p class="eyebrow">Yelp workflow</p>
+      <h1>Fast, polished first response for Yelp leads</h1>
+      <p class="page-hero__copy">
+        Yelp leads are expensive to waste. This page frames the demo around immediate follow-up,
+        clear qualification, and a tone that feels useful instead of robotic.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell detail-grid">
+      <article class="detail-card">
+        <h2>What the demo should prove</h2>
+        <p>
+          Show that LeadTruffle can acknowledge the lead instantly, gather the next useful detail,
+          and tee up the business for a quick human handoff or automated next step.
+        </p>
+      </article>
+      <article class="detail-card">
+        <h2>Why this matters</h2>
+        <p>
+          Yelp prospects are often comparing multiple vendors at once, so response speed and
+          message quality both matter. The demo copy should feel precise, local, and conversion aware.
+        </p>
+      </article>
+    </div>
+  </section>
+</SiteLayout>

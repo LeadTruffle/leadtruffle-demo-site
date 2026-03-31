@@ -1,0 +1,102 @@
+---
+import Button from './Button.astro'
+import { NAV_LINKS, REAL_SITE_URL } from '../consts'
+
+const currentPath = Astro.url.pathname
+---
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="brand" href="/">
+      <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="LeadTruffle" />
+      <div class="brand__copy">
+        <span class="brand__name">LeadTruffle</span>
+        <span class="brand__sub">Demo Lab</span>
+      </div>
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary">
+      {
+        NAV_LINKS.map((link) => {
+          const isActive =
+            link.href === '/'
+              ? currentPath === '/'
+              : currentPath.startsWith(link.href)
+
+          return (
+            <a
+              class:list={['site-nav__link', { 'site-nav__link--active': isActive }]}
+              href={link.href}
+            >
+              {link.label}
+            </a>
+          )
+        })
+      }
+    </nav>
+
+    <div class="site-header__actions site-header__actions--desktop">
+      <Button href={REAL_SITE_URL} variant="ghost" size="sm">Visit leadtruffle.co</Button>
+      <Button href="/playground/" variant="secondary" size="sm">Try the sandbox</Button>
+      <Button href="/features/" size="sm">Explore demos</Button>
+    </div>
+
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-nav-panel"
+      data-mobile-nav-toggle
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+  </div>
+
+  <div class="shell mobile-nav-panel" id="mobile-nav-panel" hidden data-mobile-nav-panel>
+    <nav class="mobile-nav-links" aria-label="Mobile primary">
+      {
+        NAV_LINKS.map((link) => {
+          const isActive =
+            link.href === '/'
+              ? currentPath === '/'
+              : currentPath.startsWith(link.href)
+
+          return (
+            <a
+              class:list={['mobile-nav-link', { 'mobile-nav-link--active': isActive }]}
+              href={link.href}
+            >
+              {link.label}
+            </a>
+          )
+        })
+      }
+    </nav>
+
+    <div class="mobile-nav-actions">
+      <Button href={REAL_SITE_URL} variant="ghost" size="sm">Visit leadtruffle.co</Button>
+      <Button href="/playground/" variant="secondary" size="sm">Try the sandbox</Button>
+      <Button href="/features/" size="sm">Explore demos</Button>
+    </div>
+  </div>
+
+  <script is:inline>
+    (() => {
+      const toggle = document.querySelector('[data-mobile-nav-toggle]');
+      const panel = document.querySelector('[data-mobile-nav-panel]');
+
+      if (!(toggle instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) {
+        return;
+      }
+
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        panel.hidden = isOpen;
+      });
+    })();
+  </script>
+</header>

@@ -1,0 +1,28 @@
+---
+import FeatureCard from '../../components/FeatureCard.astro'
+import SiteLayout from '../../layouts/SiteLayout.astro'
+import { FEATURE_LINKS } from '../../consts'
+
+const pageTitle = 'Features | LeadTruffle Demo Lab'
+const pageDescription =
+  'A compact set of LeadTruffle feature pages focused on the lead sources that matter most for demos.'
+---
+
+<SiteLayout title={pageTitle} description={pageDescription}>
+  <section class="page-hero">
+    <div class="shell">
+      <p class="eyebrow">Feature pages</p>
+      <h1>Channel-aware demos instead of generic feature blurbs</h1>
+      <p class="page-hero__copy">
+        The main site can carry the broad marketing message. This demo site is where we can get
+        specific about how LeadTruffle behaves for real lead sources.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell card-grid card-grid--three">
+      {FEATURE_LINKS.map((feature) => <FeatureCard title={feature.label} description={feature.summary} href={feature.href} />)}
+    </div>
+  </section>
+</SiteLayout>

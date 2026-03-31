@@ -1,0 +1,193 @@
+---
+import Button from '../components/Button.astro'
+import FeatureCard from '../components/FeatureCard.astro'
+import WebchatEmbed from '../components/WebchatEmbed.astro'
+import SiteLayout from '../layouts/SiteLayout.astro'
+import { FEATURE_LINKS, REAL_SITE_URL } from '../consts'
+
+const pageTitle = 'LeadTruffle Demo Lab | Widget Showcase and Sandbox'
+const pageDescription =
+  'Explore LeadTruffle widget demos, channel-specific autoresponder concepts, and a playground built for fast pull-request experiments.'
+const companyId = 'f096f9e3-001d-49ac-864c-3d73453bbe08'
+---
+
+<SiteLayout title={pageTitle} description={pageDescription}>
+  <section class="hero">
+    <div class="shell hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow">Static Astro site for demos, hiring, and experiments</p>
+        <h1>
+          A cleaner place to
+          <span>show the widgets</span>
+          and stress-test new ideas.
+        </h1>
+        <p class="hero__lede">
+          LeadTruffle helps businesses capture, qualify, and follow up with inbound leads using
+          chat, forms, texting, and channel-specific automations. This site is the hands-on demo
+          layer: smaller than the main marketing site, easier to edit, and built for rapid PRs.
+        </p>
+        <div class="hero__actions">
+          <Button href={REAL_SITE_URL} variant="ghost">Visit the real site</Button>
+          <Button href="/playground/">Open the sandbox</Button>
+          <Button href="/widgets/" variant="secondary">See widget surfaces</Button>
+        </div>
+        <div class="hero__stats">
+          <div>
+            <strong>3</strong>
+            <span>core widget surfaces wired for live demos</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>autoresponder channels highlighted first</span>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>GitHub Pages deploy pipeline included</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero-card">
+          <div class="hero-card__badge">After-hours lead problem</div>
+          <img
+            src={`${import.meta.env.BASE_URL}images/42pct_of_leads_after_hours.png`}
+            alt="Graphic showing that 42 percent of leads arrive after hours"
+            loading="eager"
+            width="1536"
+            height="1024"
+          />
+        </div>
+
+        <div class="channel-stack">
+          <div class="channel-pill">
+            <img
+              src={`${import.meta.env.BASE_URL}images/platforms/google.svg`}
+              alt="Google logo"
+              width="24"
+              height="24"
+            />
+            Google LSA
+          </div>
+          <div class="channel-pill">
+            <img
+              src={`${import.meta.env.BASE_URL}images/platforms/thumbtack.svg`}
+              alt="Thumbtack logo"
+              width="24"
+              height="24"
+            />
+            Thumbtack
+          </div>
+          <div class="channel-pill">
+            <img
+              src={`${import.meta.env.BASE_URL}images/platforms/yelp.svg`}
+              alt="Yelp logo"
+              width="24"
+              height="24"
+            />
+            Yelp
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tinted">
+    <div class="shell split-callout">
+      <div>
+        <p class="eyebrow">Featured live widget</p>
+        <h2>Webchat is active on the homepage</h2>
+        <p>
+          The LeadTruffle webchat snippet is now running here so visitors can interact with a real
+          widget immediately. It’s the most visible demo surface on the site, which makes it a good
+          default for first-time visitors.
+        </p>
+      </div>
+
+      <div class="checklist">
+        <div>Live webchat launcher loads on this page</div>
+        <div>Playground holds the texting and embedded form demos</div>
+        <div>Snippet logic is split into reusable Astro components</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell section-heading">
+      <p class="eyebrow">What LeadTruffle is</p>
+      <h2>Lead capture and response software for inbound revenue teams</h2>
+      <p>
+        The product connects web widgets, texting, chat, and channel-specific lead flows so teams
+        can respond faster, route cleaner, and convert more opportunities without duct-taping
+        together six separate tools. For the broader product and marketing site, visitors can head
+        to <a class="inline-link" href={REAL_SITE_URL}>www.leadtruffle.co</a>.
+      </p>
+    </div>
+
+    <div class="shell card-grid card-grid--three">
+      <FeatureCard
+        eyebrow="Widgets"
+        title="Embeddable chat, popup, and forms"
+        description="Drop LeadTruffle into a site, capture intent in-context, and hand qualified leads to the right workflow."
+        href="/widgets/"
+      />
+      <FeatureCard
+        eyebrow="Automations"
+        title="Autoresponders tuned to the lead source"
+        description="Different channels behave differently, so the demo lab breaks out flows for Yelp, Thumbtack, and Google LSA."
+        href="/features/"
+      />
+      <FeatureCard
+        eyebrow="PR sandbox"
+        title="Easy for candidates to contribute"
+        description="This repo is intentionally lean so interview candidates can add demos, polish UX, or wire new snippets without fighting a giant codebase."
+        href="/playground/"
+      />
+    </div>
+  </section>
+
+  <section class="section section--tinted">
+    <div class="shell section-heading">
+      <p class="eyebrow">Popular feature pages</p>
+      <h2>Start with the channels people ask about most</h2>
+    </div>
+
+    <div class="shell card-grid card-grid--three">
+      {FEATURE_LINKS.map((feature) => <FeatureCard title={feature.label} description={feature.summary} href={feature.href} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split-callout">
+      <div>
+        <p class="eyebrow">Built for fast iteration</p>
+        <h2>The site shell is stable, and the first live embeds are in place.</h2>
+        <p>
+          The playground now includes the texting widget and the embedded texting form, while the
+          homepage carries the live webchat experience. That gives us a clean pattern for the next
+          round of widget demos.
+        </p>
+      </div>
+
+      <div class="checklist">
+        <div>Homepage webchat demo is live</div>
+        <div>Named DOM targets still exist for future embeds</div>
+        <div>Responsive pages stay simple for PR-based iteration</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="shell section-heading section-heading--dark">
+      <p class="eyebrow">Interview-friendly by design</p>
+      <h2>A small repo with obvious extension points</h2>
+      <p>
+        Candidates should be able to understand the site quickly, open a PR, and make visible
+        progress. That means fewer hidden dependencies, clean page routes, and straightforward
+        reusable components.
+      </p>
+    </div>
+  </section>
+
+  <WebchatEmbed companyId={companyId} />
+</SiteLayout>

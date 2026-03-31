@@ -1,0 +1,44 @@
+---
+interface Props {
+  id: string
+  title: string
+  summary: string
+  codeLabel?: string
+  placeholder?: boolean
+}
+
+const {
+  id,
+  title,
+  summary,
+  codeLabel = 'Snippet placeholder',
+  placeholder = true,
+} = Astro.props
+---
+
+<section class="widget-slot">
+  <div class="widget-slot__meta">
+    <p class="widget-slot__eyebrow">{codeLabel}</p>
+    <h3>{title}</h3>
+    <p>{summary}</p>
+  </div>
+
+  <div class="widget-slot__canvas">
+    <div class="widget-slot__chrome">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="widget-slot__body" id={id}>
+      {
+        placeholder && (
+          <div class="widget-slot__empty">
+            <strong>Widget target:</strong> <code>#{id}</code>
+            <p>Paste the LeadTruffle embed snippet here next and this canvas becomes the live demo.</p>
+          </div>
+        )
+      }
+      <slot />
+    </div>
+  </div>
+</section>

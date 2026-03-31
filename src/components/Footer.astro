@@ -1,0 +1,50 @@
+---
+import {
+  PRIVACY_POLICY_URL,
+  REAL_SITE_URL,
+  RSS_FEED_URL,
+  SITEMAP_URL,
+  TERMS_OF_SERVICE_URL,
+} from '../consts'
+---
+
+<footer class="site-footer">
+  <div class="shell site-footer__grid">
+    <div>
+      <p class="footer__eyebrow">LeadTruffle Demo Lab</p>
+      <p class="footer__copy">
+        Built as a lightweight showcase for widgets, lead-routing ideas, and interview PR
+        experiments.
+      </p>
+      <a class="footer__site-link" href={REAL_SITE_URL}>See the full production site at leadtruffle.co</a>
+    </div>
+
+    <div>
+      <p class="footer__heading">Explore</p>
+      <div class="footer__links">
+        <a href="/widgets/">Widgets</a>
+        <a href="/playground/">Playground</a>
+        <a href="/features/">Features</a>
+      </div>
+    </div>
+
+    <div>
+      <p class="footer__heading">Popular flows</p>
+      <div class="footer__links">
+        <a href="/features/yelp/">Yelp</a>
+        <a href="/features/thumbtack/">Thumbtack</a>
+        <a href="/features/google-lsa/">Google LSA</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell site-footer__bottom">
+    <span>LeadTruffle Demo Lab</span>
+    <div class="site-footer__legal">
+      <a href={PRIVACY_POLICY_URL}>Privacy Policy</a>
+      <a href={TERMS_OF_SERVICE_URL}>Terms of Service</a>
+      <a href={SITEMAP_URL}>Sitemap</a>
+      <a href={RSS_FEED_URL}>RSS</a>
+    </div>
+  </div>
+</footer>

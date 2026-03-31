@@ -1,0 +1,86 @@
+---
+import LeadFormEmbed from '../components/LeadFormEmbed.astro'
+import SiteLayout from '../layouts/SiteLayout.astro'
+import TextingWidgetEmbed from '../components/TextingWidgetEmbed.astro'
+import WidgetSlot from '../components/WidgetSlot.astro'
+
+const pageTitle = 'Playground | LeadTruffle Demo Lab'
+const pageDescription =
+  'A sandbox page with pre-built targets for future LeadTruffle widget snippets.'
+const companyId = 'f096f9e3-001d-49ac-864c-3d73453bbe08'
+---
+
+<SiteLayout title={pageTitle} description={pageDescription}>
+  <section class="page-hero">
+    <div class="shell">
+      <p class="eyebrow">Sandbox</p>
+      <h1>Live widget playground</h1>
+      <p class="page-hero__copy">
+        This page now carries the live texting widget and the embedded texting form, with enough
+        surrounding structure that future snippets can slot in cleanly too.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell playground-notes">
+      <div>
+        <strong>How to use it</strong>
+        <p>
+          The floating texting widget loads on this page automatically, and the form embed mounts
+          inside the dedicated container below.
+        </p>
+      </div>
+      <div>
+        <strong>Why it exists</strong>
+        <p>
+          Interview candidates should be able to test one change at a time without digging through
+          a large marketing codebase first.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell widget-stack">
+      <section class="widget-slot">
+        <div class="widget-slot__meta">
+          <p class="widget-slot__eyebrow">Texting demo</p>
+          <h3>Floating texting widget</h3>
+          <p>
+            This one does not mount into a box on the page. It loads as a floating widget so the
+            right place to test it is the bottom corner of the current screen.
+          </p>
+        </div>
+
+        <div class="widget-slot__canvas">
+          <div class="widget-slot__chrome">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="widget-slot__body">
+            <div class="widget-slot__empty">
+              <strong>Live now:</strong> texting launcher should appear in-page.
+              <p>
+                Scroll, resize, and click around to check how the floating widget behaves on the
+                demo site shell.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <WidgetSlot
+        id="lead-form-container"
+        title="Embedded texting form"
+        summary="This is the inline mount target for the LeadTruffle form embed, useful for testing layout and conversion flow inside real page content."
+        codeLabel="Form demo"
+        placeholder={false}
+      />
+    </div>
+  </section>
+
+  <TextingWidgetEmbed companyId={companyId} />
+  <LeadFormEmbed companyId={companyId} targetElement="#lead-form-container" />
+</SiteLayout>

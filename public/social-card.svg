@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F9FBFF"/>
+      <stop offset="60%" stop-color="#ECF3FF"/>
+      <stop offset="100%" stop-color="#FFF3DF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1060" height="490" rx="40" fill="#ffffff" opacity="0.85"/>
+  <text x="110" y="220" fill="#0F1930" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800">
+    LeadTruffle Demo Lab
+  </text>
+  <text x="110" y="310" fill="#355074" font-family="Inter, Arial, sans-serif" font-size="34">
+    Widget demos, autoresponder concepts, and PR-friendly experiments.
+  </text>
+  <rect x="110" y="380" width="230" height="62" rx="31" fill="#0B6CFF"/>
+  <text x="150" y="420" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">
+    Astro + GitHub Pages
+  </text>
+</svg>

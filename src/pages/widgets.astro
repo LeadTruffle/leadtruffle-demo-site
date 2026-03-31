@@ -1,0 +1,57 @@
+---
+import FeatureCard from '../components/FeatureCard.astro'
+import SiteLayout from '../layouts/SiteLayout.astro'
+
+const pageTitle = 'Widgets | LeadTruffle Demo Lab'
+const pageDescription =
+  'An overview of the widget surfaces this demo site is set up to showcase.'
+---
+
+<SiteLayout title={pageTitle} description={pageDescription}>
+  <section class="page-hero">
+    <div class="shell">
+      <p class="eyebrow">Widget showcase</p>
+      <h1>Every demo surface we want to make easy to test</h1>
+      <p class="page-hero__copy">
+        This site is structured around embeddable experiences, not generic marketing pages. The
+        goal is to make it obvious where each widget belongs and how a candidate or teammate can
+        extend it.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell card-grid card-grid--three">
+      <FeatureCard
+        eyebrow="On-page"
+        title="Website chat widget"
+        description="A persistent conversational entry point for visitors who want a fast answer without filling out a long form."
+      />
+      <FeatureCard
+        eyebrow="Intent capture"
+        title="Popup lead widget"
+        description="A higher-visibility surface for time-sensitive campaigns, after-hours routing, or lead magnets."
+      />
+      <FeatureCard
+        eyebrow="Embedded"
+        title="Inline form widget"
+        description="A lower-friction form block for landing pages, service pages, and high-intent conversion sections."
+      />
+      <FeatureCard
+        eyebrow="Follow-up"
+        title="Texting handoff"
+        description="Once the lead lands, LeadTruffle can continue the conversation through SMS and automated qualification."
+      />
+      <FeatureCard
+        eyebrow="Routing"
+        title="Lead source awareness"
+        description="The same visitor experience can branch differently depending on whether the lead came from Yelp, Thumbtack, Google LSA, or direct traffic."
+      />
+      <FeatureCard
+        eyebrow="Experimentation"
+        title="Candidate-friendly extension points"
+        description="The small Astro component set makes it easy to add a new demo page, improve a widget shell, or test a new content pattern."
+      />
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,39 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro'
+
+const pageTitle = 'Thumbtack Autoresponder Demo | LeadTruffle Demo Lab'
+const pageDescription =
+  'A focused demo page for showing how LeadTruffle can help teams respond to Thumbtack leads before the window closes.'
+---
+
+<SiteLayout title={pageTitle} description={pageDescription}>
+  <section class="page-hero">
+    <div class="shell">
+      <p class="eyebrow">Thumbtack workflow</p>
+      <h1>Reply before the paid lead cools off</h1>
+      <p class="page-hero__copy">
+        Thumbtack leads tend to reward speed and relevance. This demo page is about showing how
+        LeadTruffle can move first without sounding generic or throwing junk into the sales process.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell detail-grid">
+      <article class="detail-card">
+        <h2>What the demo should prove</h2>
+        <p>
+          The lead gets an immediate response, the business captures enough context to prioritize
+          correctly, and the overall workflow feels worth paying for.
+        </p>
+      </article>
+      <article class="detail-card">
+        <h2>Why this matters</h2>
+        <p>
+          On Thumbtack, being late can mean paying for a lead someone else closes. The demo should
+          make fast qualification and handoff feel operationally simple.
+        </p>
+      </article>
+    </div>
+  </section>
+</SiteLayout>
